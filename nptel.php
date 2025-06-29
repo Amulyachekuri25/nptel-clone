@@ -132,9 +132,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $uniqueVideo=uniqid().'_'.$video;
     $uniquePdf=uniqid().'_'.$pdf;
     // Move the uploaded file to the "uploads" folder with a unique name
-    move_uploaded_file($tmp_name, "uploads/" . $uniqueName);
-    move_uploaded_file($tmp_pdf,"uploads/".$uniquePdf);
-    move_uploaded_file($tmp_video,"uploads/".$uniqueVideo);
+    move_uploaded_file($tmp_name, "uploads" . $uniqueName);
+    move_uploaded_file($tmp_pdf,"uploads".$uniquePdf);
+    move_uploaded_file($tmp_video,"uploads".$uniqueVideo);
     // Insert data into the database
     $conn = new mysqli('localhost', 'root', '', 'reg_database');
     if ($conn->connect_error) {
